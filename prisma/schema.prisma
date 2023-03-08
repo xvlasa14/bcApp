@@ -55,7 +55,7 @@ model Test {
   updatedAt DateTime  @updatedAt
 
   name      String
-  category  String
+  category  String?
 
   parts     Part[]
   exams     Exam[]
