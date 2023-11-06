@@ -32,14 +32,22 @@ export default {
     };
   },
   methods: {
-    submitForm: function () {
+    submitForm: async function () {
         this.data = JSON.stringify({
             username: this.username, 
-            firstName: this.firstName, 
+            firstName: this.firstName,  
             lastName: this.lastName, 
             role: this.role, 
-            email: this.email                   
+            email: this.email                     
         });
+
+        const reply = await fetch('http://localhost:52000/users', {
+          method: 'POST',
+          body: this.data,
+          headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
+        });
+
+        console.log(reply);
     }
   }
 };
