@@ -28,9 +28,8 @@ export default {
 
       const reply = await fetch('http://localhost:52000/auth/token', {
         method: "POST",
-        mode: 'no-cors',
         body: formurlencoded(this.data),
-        headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/x-www-form-urlencoded'},
+        headers: {'Access-Control-Allow-Origin': 'http://localhost:52000', 'Content-Type': 'application/x-www-form-urlencoded'},
       });
 
       console.log(reply);

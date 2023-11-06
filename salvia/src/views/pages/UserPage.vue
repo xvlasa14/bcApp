@@ -44,7 +44,7 @@ export default {
         const reply = await fetch('http://localhost:52000/users', {
           method: 'POST',
           body: this.data,
-          headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
+          headers: {'Access-Control-Allow-Origin': 'http://localhost:52000', 'Content-Type': 'application/json'},
         });
 
         console.log(reply);
