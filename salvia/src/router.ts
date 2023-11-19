@@ -3,12 +3,13 @@ import LoginPage from './views/pages/LoginPage.vue';
 import HomePage from './views/pages/HomePage.vue';
 import UserPage from './views/pages/UserPage.vue';
 import PatientPage from './views/pages/PatientPage.vue';
+import PatientDetailPage from './views/pages/patient_pages/PatientDetailPage.vue';
 import TestsPage from './views/pages/TestsPage.vue';
 
 export default createRouter({
   history: createWebHistory(),
   routes: [
-    { 
+    {
       path: '/',
       component: HomePage
     },
@@ -23,6 +24,11 @@ export default createRouter({
     {
       path: '/patient',
       component: PatientPage
+    },
+    {
+      path: '/patient/:patient_id',
+      component: PatientDetailPage,
+      props: true,
     },
     {
       path: '/tests',
