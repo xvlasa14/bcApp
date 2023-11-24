@@ -5,5 +5,4 @@ interface Test {
     description: string;
 
     modules: Array<Module>;
-
 }

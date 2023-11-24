@@ -6,7 +6,9 @@
         <input v-model="firstName" type="text" placeholder="firstName" /><br/>
         <input v-model="lastName" type="text" placeholder="lastName" />
         <input v-model="role" type="text" placeholder="role" /><br/>
-        <input v-model="email" type="email" placeholder="email" /><br/>
+        <input v-model="email" type="email" placeholder="email" />
+        <input v-model="password" type="password" placeholder="password" /><br/>
+
         <input class="submit" type="submit" value="Submit"/><br/>
     </form>
     <div>
@@ -17,7 +19,6 @@
         <p>email: {{ email }}</p>
         <p>data: {{ data }}</p>
     </div>
-  
 </template>
 <script lang="ts">
 export default {
@@ -28,6 +29,7 @@ export default {
       lastName: "",
       role: "",
       email: "",
+      password: "",
       data: ""
     };
   },
@@ -38,13 +40,15 @@ export default {
             firstName: this.firstName,  
             lastName: this.lastName, 
             role: this.role, 
-            email: this.email                     
+            email: this.email,
+            password: this.password                     
         });
 
         const reply = await fetch('http://localhost:52000/users', {
           method: 'POST',
+          mode: 'no-cors',
           body: this.data,
-          headers: {'Access-Control-Allow-Origin': 'http://localhost:52000', 'Content-Type': 'application/json'},
+          headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
         });
 
         console.log(reply);

@@ -4,6 +4,7 @@ interface Module {
     name: string;
     description: string;
     abbreviation: string;
-    norm: Array<Norm>;
-
+    value: number;
+    norms: Array<Norm>;
+    submodules?: Array<Module>;
 }

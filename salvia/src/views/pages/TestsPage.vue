@@ -1,3 +1,3 @@
 <template>
-    <p>Tests overview</p>
+    <h2>tests profile</h2>
 </template>

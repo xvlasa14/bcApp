@@ -8,4 +8,5 @@ interface Patient {
     birthyear: string;
     admission: Date;
 
+    exams: Array<Exam>;
 }
