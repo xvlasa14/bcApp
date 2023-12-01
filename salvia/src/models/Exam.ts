@@ -4,5 +4,5 @@ interface Exam {
     doctorID: number;
     description: string;
     date: Date;
-    testID: number;
+    tests: Array<Test>;
 }
